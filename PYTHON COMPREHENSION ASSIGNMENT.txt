@@ -1,0 +1,92 @@
+List Comprehension
+-----------------------
+1)create list comprehension to print the value in reverse order
+li = ['python', 10, 3.2, 'selenium_', 'java']
+# new_li=[]
+# for ele in range(-1, -len(li),-1):
+#     new_li.append(li[ele])
+
+# print(new_li)    
+
+=====using comprehension
+new_li=[li[ele] for ele in range(-1, -len(li),-1)]
+print(new_li)
+========
+o/p:['java', 'selenium_', 3.2, 10]
+
+====================================================================
+# 2) print only single value data types in list
+li = ['python',1.2,100,'selenium_', 'java','abc',1,12,13,14,3+4j]
+# new_list=[]
+# for ele in li:
+#     if isinstance(ele,int) or isinstance(ele, float):
+#         new_list.append(ele)
+
+# print(new_list)        
+
+new_li=[ele for ele in li if isinstance(ele,int)or isinstance(ele,float)]
+print(new_li)
+
+======================================================================
+# 3)print odd length as it is even length reverse it
+li = ['python', 'java', 'selium', 'abc', 'abcde']
+# new_li=[]
+# for ele in li:
+#     if len(ele)%2!=0:
+#         print(ele)
+#     else:
+#         if len(ele)%2==0:
+#             print(ele[::-1])    
+
+
+new_li = [ele if len(ele) % 2 != 0 else ele[::-1] for ele in li]
+print(new_li)
+
+
+======================================================================
+# 4)print word with length
+li = ['python','selenium_', 'java','abc']
+for ele in li:
+    print(ele,":",len(ele))
+
+new_li=[len(ele) for ele in li]    
+print(new_li)
+===================================================================
+# 5)odd lengh print as it is even length reverse it
+li = ['python','selenium_', 'java','abc']
+# for ele in li:
+#     if len(ele)%2!=0:
+#         print(ele)
+#     else:
+#         if len(ele)%2==0:
+#             print(ele[::-1])    
+
+result = [ele if len(ele) % 2 != 0 else ele[::-1] for ele in li]
+print(result)
+================================================================
+
+# 8)print only extension in list
+li = ['gmail.com','yahoo.in','google.com']
+# for ele in li:
+#     print(ele.split('.')[1])
+
+new_li=[ele.split('.')[1] for ele in li]
+print(new_li)
+
+=============================================================
+# 9)first and last charcter should be same
+li = ['axa','amma','xyz','1221']
+# for ele in li:
+#     if len(ele)>2 and ele[0]==ele[-1]:
+#         print(ele, end=' ')
+
+result = [ele for ele in li if len(ele) > 2 and ele[0] == ele[-1]]
+print(result)
+
+==============================================================
+# 10)Print multiplication table 2 to 5 
+# for i in range(2, 6):
+#     print(f"Multiplication for{i}:")
+#     for j in range(1, 11): 
+#         product = i * j
+#         print(f"{i} x {j} = {product}")
